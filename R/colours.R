@@ -96,6 +96,12 @@ warhol_palettes <- list(
     "#7bafd9",
     "#f8968c",
     "#e1d7cf"
+  ),
+  the_big_c_86 = c(
+    "#f5433f",
+    "#f8de02",
+    "#579ce9",
+    "#cac7bb"
   )
   )
 
