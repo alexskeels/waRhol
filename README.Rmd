@@ -1,0 +1,131 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# waRhol
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+waRhol is an R package containing colour palettes inspired by the paintings of Andy Warhol. It can be directly integrated with ggplot and base R plotting.
+
+## Installation
+
+You can install the development version of waRhol from [GitHub](https://github.com/) with:
+
+```{r message=FALSE}
+# install.packages("devtools")
+devtools::install_github("alexskeels/waRhol")
+```
+
+## Palettes
+
+Here are the palettes:
+
+```{r}
+library(waRhol)
+library(ggplot2)
+
+pal_names <- names(warhol_palettes)
+
+par(mfrow=c(length(warhol_palettes)/2, 2), lheight = 2, mar=rep(1, 4), adj = 0)
+for (i in 1:length(warhol_palettes)){
+  viz_palette(warhol_palettes[[i]], pal_names[i])
+}
+
+```
+
+## inspiration
+
+![skull_76_1](files/Warhol_Skull_1976.jpg)
+```{r}
+viz_palette(warhol_palettes[["skull_76_1"]])
+```
+
+![skull_76_2](files/Warhol_Skull.PNG)
+```{r}
+viz_palette(warhol_palettes[["skull_76_2"]])
+```
+
+![skull_77](files/Warhol_Skull_1977.jpg)
+```{r}
+viz_palette(warhol_palettes[["skull_77"]])
+```
+
+![skull_86](files/Warhol_Skull_1986.PNG)
+```{r}
+viz_palette(warhol_palettes[["skull_86"]])
+```
+
+![marilyn_orange_62](files/Warhol_Marilyn_Orange_1962.PNG)
+```{r}
+viz_palette(warhol_palettes[["marilyn_orange_62"]])
+```
+
+![marilyn_green_62](files/Warhol_Marilyn_Green_1962.PNG)
+
+```{r}
+viz_palette(warhol_palettes[["marilyn_green_62"]])
+```
+
+![marilyn_67](files/Warhol_Marilyn_1967.jpg)
+```{r}
+viz_palette(warhol_palettes[["marilyn_67"]])
+```
+
+![camo_87](files/Warhol_Camoflague_1987.jpg)
+
+```{r}
+viz_palette(warhol_palettes[["camo_87_1"]])
+
+viz_palette(warhol_palettes[["camo_87_2"]])
+
+viz_palette(warhol_palettes[["camo_87_3"]])
+
+viz_palette(warhol_palettes[["camo_87_4"]])
+
+viz_palette(warhol_palettes[["camo_87_5"]])
+```
+
+![bighorn_ram_83](files/Warhol_BighornRam_1983.PNG)
+```{r}
+viz_palette(warhol_palettes[["bighorn_ram_83"]])
+```
+
+![basquiat_85](files/Warhol_Basquiat_1985.jpg)
+```{r}
+viz_palette(warhol_palettes[["basquiat_85"]])
+```
+
+## Useage examples
+
+Example of a discrete palette in ggplot
+
+```{r}
+
+ggplot(diamonds) + 
+  geom_bar(aes(x = cut, fill = clarity)) +
+  theme_light()+
+  scale_fill_warhol(palette="bighorn_ram_83")
+```
+
+Example of a continuous palette in base R
+
+```{r}
+par(mfrow=c(1,1))
+pal <- colorRampPalette(warhol_palettes[["skull_76_2"]])
+image(volcano, col = pal(20))
+```
+
+
