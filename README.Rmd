@@ -108,6 +108,11 @@ viz_palette(warhol_palettes[["bighorn_ram_83"]])
 viz_palette(warhol_palettes[["basquiat_85"]])
 ```
 
+![the_big_c_86](files/Warhol_LastSupper_1986.jpg)
+```{r}
+viz_palette(warhol_palettes[["the_big_c_86"]])
+```
+
 ## Useage examples
 
 Example of a discrete palette in ggplot
@@ -118,6 +123,20 @@ ggplot(diamonds) +
   geom_bar(aes(x = cut, fill = clarity)) +
   theme_light()+
   scale_fill_warhol(palette="bighorn_ram_83")
+```
+
+Example of a continuous palette in ggplot
+
+```{r}
+ggplot(mtcars, aes(mpg, wt)) + 
+  geom_point(aes(colour = hp), size=2) +     
+  scale_colour_warhol(palette="camo_87_1", discrete = FALSE)+
+  theme_light()
+
+ggplot(mtcars, aes(mpg, wt)) + 
+  geom_point(aes(colour = hp), size=2) +     
+  scale_colour_warhol(palette="marilyn_orange_62", discrete = FALSE)+
+  theme_light()
 ```
 
 Example of a continuous palette in base R

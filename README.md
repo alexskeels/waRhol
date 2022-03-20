@@ -36,7 +36,7 @@ for (i in 1:length(warhol_palettes)){
 }
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" /><img src="man/figures/README-unnamed-chunk-3-2.png" width="100%" />
 
 ## inspiration
 
@@ -144,6 +144,14 @@ viz_palette(warhol_palettes[["basquiat_85"]])
 
 <img src="man/figures/README-unnamed-chunk-13-1.png" width="100%" />
 
+![the_big_c\_86](files/Warhol_LastSupper_1986.jpg)
+
+``` r
+viz_palette(warhol_palettes[["the_big_c_86"]])
+```
+
+<img src="man/figures/README-unnamed-chunk-14-1.png" width="100%" />
+
 ## Useage examples
 
 Example of a discrete palette in ggplot
@@ -155,7 +163,27 @@ ggplot(diamonds) +
   scale_fill_warhol(palette="bighorn_ram_83")
 ```
 
-<img src="man/figures/README-unnamed-chunk-14-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-15-1.png" width="100%" />
+
+Example of a continuous palette in ggplot
+
+``` r
+ggplot(mtcars, aes(mpg, wt)) + 
+  geom_point(aes(colour = hp), size=2) +     
+  scale_colour_warhol(palette="camo_87_1", discrete = FALSE)+
+  theme_light()
+```
+
+<img src="man/figures/README-unnamed-chunk-16-1.png" width="100%" />
+
+``` r
+ggplot(mtcars, aes(mpg, wt)) + 
+  geom_point(aes(colour = hp), size=2) +     
+  scale_colour_warhol(palette="marilyn_orange_62", discrete = FALSE)+
+  theme_light()
+```
+
+<img src="man/figures/README-unnamed-chunk-16-2.png" width="100%" />
 
 Example of a continuous palette in base R
 
@@ -165,4 +193,4 @@ pal <- colorRampPalette(warhol_palettes[["skull_76_2"]])
 image(volcano, col = pal(20))
 ```
 
-<img src="man/figures/README-unnamed-chunk-15-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-17-1.png" width="100%" />
